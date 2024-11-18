@@ -3,13 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Group 2 Finder</title>
-    <link rel="stylesheet" href="Styles/group2.css" />
-    <script src="Scripts/group2.js" defer></script>
+    <title>AC Finder</title>
+    <link rel="stylesheet" href="Styles/prz.css" />
+    
   </head>
+
   <body>
     <!-- Include Navbar -->
     <div id="navbar"></div>
+
+    <!-- Fetch Navbar HTML -->
     <script>
       fetch("navbar.html")
         .then((response) => response.text())
@@ -53,24 +56,24 @@
     </script>
 
     <div class="container">
-      <h1>Group 2 XD Finder</h1>
+      <h1>Retracement & Projection Finder</h1>
 
-      <!-- Input and button -->
-    
+      <label for="compareInput"></label>
       <div class="input-group">
-        <input type="number" id="compareInputXB" step="0.001" placeholder="Enter XB value > 0.3" required />
-        <input type="number" id="compareInputAC" step="0.001" placeholder="Enter AC value > 1" required  onkeydown="handleKeyPress(event)"/>
+        <input type="number" id="compareInput" step="0.001" placeholder="Enter AC value > 0 & < 3" required onkeydown="handleKeyPress(event)" />
+        <button onclick="findNearestValue()">Find AC</button>
       </div>
-      <button onclick="findNearestValue()">Find XD</button>
 
-      <!-- Popup error message -->
-      <div id="popupMessage" class="popup">Please enter valid values. XB should be within range, and AC must be greater than 1.</div>
+      <div id="popupMessage" class="popup">Please enter a valid number greater than 0 and less than 3.</div>
 
-      <!-- Results -->
-     
+      <h3>Results:</h3>
       <p id="nearestValueOutput">Nearest Retracement Value:</p>
-      <div id="resultsTable"></div>
+      <p id="projectionValueOutput">Projection Value:</p>
       <div id="instructions"></div>
     </div>
+
+    <script>
+      // ... Your existing findNearestValue() and related logic here ...
+    </script>
   </body>
 </html>

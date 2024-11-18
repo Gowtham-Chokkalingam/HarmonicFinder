@@ -33,6 +33,14 @@ body {
 .navbar ul li a:hover {
   color: #4caf50;
 }
+.navbar ul li a.active {
+  color: #e6e6e6; /* Highlight color */
+  font-weight: bold;
+  padding: 4px 10px;
+  background-color:#046407;
+  border-radius: 10px;
+  /* Optional: underline the active link */
+}
 
 .container {
   background-color: #fff;
