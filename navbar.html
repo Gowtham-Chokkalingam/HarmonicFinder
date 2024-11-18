@@ -6,33 +6,4 @@
     <li><a href="group2.html" id="Group2-Finder">Group2 Finder</a></li>
   </ul>
 </nav>
-<script>
-  const navLinks = {
-    "AC-Finder": "/HarmonicFinder/index.html",
-    "Group1-Finder": "/HarmonicFinder/group1.html",
-    "Group2-Finder": "/HarmonicFinder/group2.html",
-  };
 
-  // Get the current path
-  const currentPath = window.location.pathname;
-  console.log("Current Path:", currentPath);
-
-  // Loop through the navLinks and add/remove the active class
-  for (const [linkId, linkPath] of Object.entries(navLinks)) {
-    const linkElement = document.getElementById(linkId);
-    console.log("Checking link:", linkId, "Path:", linkPath, "Element:", linkElement);
-    console.log("Element:", linkElement);
-
-    if (linkElement) {
-      if (currentPath.endsWith(linkPath)) {
-        linkElement.classList.add("active");
-        console.log("Added active class to:", linkId);
-      } else {
-        linkElement.classList.remove("active");
-        console.log("Removed active class from:", linkId);
-      }
-    } else {
-      console.warn("No element found with id:", linkId);
-    }
-  }
-</script>
