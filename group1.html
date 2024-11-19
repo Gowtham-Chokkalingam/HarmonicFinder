@@ -9,6 +9,28 @@
   <body>
     <!-- Include Navbar -->
     <div id="navbar"></div>
+
+    <div class="container">
+      <h1>Group 1 XD Finder</h1>
+
+      <!-- Input and button -->
+      <label for="compareInput"></label>
+
+      <div class="input-group">
+        <input type="number" id="compareInput" step="0.001" placeholder="Enter XB value < 1 " required onkeydown="handleKeyPress(event)" />
+        <button onclick="findNearestValue()">Find XD</button>
+      </div>
+
+      <!-- Popup error message -->
+      <div id="popupMessage" class="popup">Please enter a valid number greater than 0.3 and less than 0.97.</div>
+
+      <!-- Results -->
+
+      <p id="nearestValueOutput">Nearest Retracement Value:</p>
+      <div id="resultsTable"></div>
+      <div id="instructions"></div>
+    </div>
+
     <script>
       fetch("navbar.html")
         .then((response) => response.text())
@@ -22,10 +44,10 @@
       // Function to highlight the active link in the navbar
       function highlightActiveNavLink() {
         const navLinks = {
-        "AC-Finder": "/",
-        "Group1-Finder": "/group1.html",
-        "Group2-Finder": "/group2.html",
-      };
+          "AC-Finder": "/",
+          "Group1-Finder": "/group1",
+          "Group2-Finder": "/group2",
+        };
 
         // Get the current path
         const currentPath = window.location.pathname;
@@ -49,29 +71,6 @@
           }
         }
       }
-    </script>
-    <div class="container">
-      <h1>Group 1 XD Finder</h1>
-
-      <!-- Input and button -->
-      <label for="compareInput"></label>
-    
-      <div class="input-group">
-        <input type="number" id="compareInput" step="0.001" placeholder="Enter XB value < 1 " required onkeydown="handleKeyPress(event)" />
-        <button onclick="findNearestValue()">Find XD</button>
-      </div>
-
-      <!-- Popup error message -->
-      <div id="popupMessage" class="popup">Please enter a valid number greater than 0.3 and less than 0.97.</div>
-
-      <!-- Results -->
-   
-      <p id="nearestValueOutput">Nearest Retracement Value:</p>
-      <div id="resultsTable"></div>
-      <div id="instructions"></div>
-    </div>
-
-    <script>
       const Retracement = [0.382, 0.5, 0.618, 0.786, 0.886];
       const XD = {
         0.382: [

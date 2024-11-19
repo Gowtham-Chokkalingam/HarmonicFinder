@@ -10,46 +10,7 @@
   <body>
     <!-- Include Navbar -->
     <div id="navbar"></div>
-    <script>
-      fetch("navbar.html")
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById("navbar").innerHTML = data;
 
-          // After navbar is loaded, highlight the active link
-          highlightActiveNavLink();
-        });
-
-      // Function to highlight the active link in the navbar
-      function highlightActiveNavLink() {
-        const navLinks = {
-        "AC-Finder": "/",
-        "Group1-Finder": "/group1.html",
-        "Group2-Finder": "/group2.html",
-      };
-        // Get the current path
-        const currentPath = window.location.pathname;
-        console.log("Current Path:", currentPath);
-
-        // Loop through the navLinks and add/remove the active class
-        for (const [linkId, linkPath] of Object.entries(navLinks)) {
-          const linkElement = document.getElementById(linkId);
-          console.log("Checking link:", linkId, "Path:", linkPath, "Element:", linkElement);
-
-          if (linkElement) {
-            if (currentPath.endsWith(linkPath)) {
-              linkElement.classList.add("active");
-              console.log("Added active class to:", linkId);
-            } else {
-              linkElement.classList.remove("active");
-              console.log("Removed active class from:", linkId);
-            }
-          } else {
-            console.warn("No element found with id:", linkId);
-          }
-        }
-      }
-    </script>
 
     <div class="container">
       <h1>Group 2 XD Finder</h1>

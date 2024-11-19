@@ -1,3 +1,44 @@
+// navbar
+
+fetch("navbar.html")
+  .then((response) => response.text())
+  .then((data) => {
+    document.getElementById("navbar").innerHTML = data;
+
+    // After navbar is loaded, highlight the active link
+    highlightActiveNavLink();
+  });
+
+// Function to highlight the active link in the navbar
+function highlightActiveNavLink() {
+  const navLinks = {
+    "AC-Finder": "/",
+    "Group1-Finder": "/group1",
+    "Group2-Finder": "/group2",
+  };
+  // Get the current path
+  const currentPath = window.location.pathname;
+  console.log("Current Path:", currentPath);
+
+  // Loop through the navLinks and add/remove the active class
+  for (const [linkId, linkPath] of Object.entries(navLinks)) {
+    const linkElement = document.getElementById(linkId);
+    console.log("Checking link:", linkId, "Path:", linkPath, "Element:", linkElement);
+
+    if (linkElement) {
+      if (currentPath.endsWith(linkPath)) {
+        linkElement.classList.add("active");
+        console.log("Added active class to:", linkId);
+      } else {
+        linkElement.classList.remove("active");
+        console.log("Removed active class from:", linkId);
+      }
+    } else {
+      console.warn("No element found with id:", linkId);
+    }
+  }
+}
+
 const Retracement = [1.13, 1.272, 1.414, 1.618];
 const XB = [0.3, 0.7];
 const XD = {

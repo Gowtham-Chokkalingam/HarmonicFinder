@@ -10,6 +10,25 @@
   <body>
     <!-- Include Navbar -->
     <div id="navbar"></div>
+    <div class="container">
+      <h1>Retracement & Projection Finder</h1>
+      <!-- Update this part in your existing code -->
+
+      <label for="compareInput"></label>
+      <div class="input-group">
+        <input type="number" id="compareInput" step="0.001" placeholder="Enter AC value > 0 & < 3 " required onkeydown="handleKeyPress(event)" />
+        <button onclick="findNearestValue()">Find AC</button>
+      </div>
+
+      <!-- Popup error message -->
+      <div id="popupMessage" class="popup">Please enter a valid number greater than 0 and less than 3.</div>
+
+      <h3>Results:</h3>
+      <p id="nearestValueOutput">Nearest Retracement Value:</p>
+      <p id="projectionValueOutput">Projection Value:</p>
+      <div id="instructions"></div>
+    </div>
+
     <script>
       fetch("navbar.html")
         .then((response) => response.text())
@@ -23,9 +42,9 @@
       // Function to highlight the active link in the navbar
       function highlightActiveNavLink() {
         const navLinks = {
-          "AC-Finder": "/HarmonicFinder/index.html",
-          "Group1-Finder": "/HarmonicFinder/group1.html",
-          "Group2-Finder": "/HarmonicFinder/group2.html",
+          "AC-Finder": "/",
+          "Group1-Finder": "/group1",
+          "Group2-Finder": "/group2",
         };
 
         // Get the current path
@@ -48,55 +67,6 @@
           } else {
             console.warn("No element found with id:", linkId);
           }
-        }
-      }
-    </script>
-    <div class="container">
-      <h1>Retracement & Projection Finder</h1>
-      <!-- Update this part in your existing code -->
-
-      <label for="compareInput"></label>
-      <div class="input-group">
-        <input type="number" id="compareInput" step="0.001" placeholder="Enter AC value > 0 & < 3 " required onkeydown="handleKeyPress(event)" />
-        <button onclick="findNearestValue()">Find AC</button>
-      </div>
-
-      <!-- Popup error message -->
-      <div id="popupMessage" class="popup">Please enter a valid number greater than 0 and less than 3.</div>
-
-      <h3>Results:</h3>
-      <p id="nearestValueOutput">Nearest Retracement Value:</p>
-      <p id="projectionValueOutput">Projection Value:</p>
-      <div id="instructions"></div>
-    </div>
-
-    <script>
-      const navLinks = {
-        "AC-Finder": "/",
-        "Group1-Finder": "/group1.html",
-        "Group2-Finder": "/group2.html",
-      };
-
-      // Get the current path
-      const currentPath = window.location.pathname;
-      console.log("Current Path:", currentPath);
-
-      // Loop through the navLinks and add/remove the active class
-      for (const [linkId, linkPath] of Object.entries(navLinks)) {
-        const linkElement = document.getElementById(linkId);
-        console.log("Checking link:", linkId, "Path:", linkPath, "Element:", linkElement);
-        console.log("Element:", linkElement);
-
-        if (linkElement) {
-          if (currentPath.endsWith(linkPath)) {
-            linkElement.classList.add("active");
-            console.log("Added active class to:", linkId);
-          } else {
-            linkElement.classList.remove("active");
-            console.log("Removed active class from:", linkId);
-          }
-        } else {
-          console.warn("No element found with id:", linkId);
         }
       }
 
