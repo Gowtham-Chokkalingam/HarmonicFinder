@@ -221,7 +221,14 @@ table {
     font-weight: bold;
     font-size: 12px;
   }
-
+  .navbar ul li a.active {
+    color: #e6e6e6; /* Highlight color */
+    font-weight: bold;
+    padding: 4px 10px;
+    background-color:#046407;font-size: 14px;
+    border-radius: 10px;
+    /* Optional: underline the active link */
+  }
   input[type="number"],
   button {
     width: 100%; /* Full-width inputs and button */
