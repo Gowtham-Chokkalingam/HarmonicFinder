@@ -36,8 +36,9 @@ body {
 .navbar ul li a.active {
   color: #e6e6e6; /* Highlight color */
   font-weight: bold;
-  padding: 4px 10px;
-  background-color:#046407;
+  padding: 4px 16px;
+  font-size: 22px;
+  background-color: #046407;
   border-radius: 10px;
   /* Optional: underline the active link */
 }
@@ -78,7 +79,6 @@ label {
 
 /* Stylish input field */
 input[type="number"] {
-  
   padding: 8px 10px;
   border: 2px solid #292323;
   border-radius: 8px;
@@ -99,7 +99,7 @@ button {
   background-color: #4caf50;
   color: white;
   width: 80%;
-  height:40px;
+  height: 40px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -184,8 +184,6 @@ tr:hover {
   cursor: pointer;
 }
 
-
-
 /* Image styling inside the table */
 td img {
   max-width: 50px;
@@ -196,7 +194,7 @@ td img {
 
 /* Add a subtle border to the entire table */
 table {
-  border: 2px solid #4CAF50; /* Matches the header color */
+  border: 2px solid #4caf50; /* Matches the header color */
 }
 
 /* Responsive design for smaller screens */
@@ -213,7 +211,6 @@ table {
     width: 85%;
     padding: 10px;
   }
-
 
   .navbar ul li a {
     color: white;
