@@ -11,15 +11,14 @@
     <!-- Include Navbar -->
     <div id="navbar"></div>
 
-
     <div class="container">
       <h1>Group 2 XD Finder</h1>
 
       <!-- Input and button -->
-    
+
       <div class="input-group">
         <input type="number" id="compareInputXB" step="0.001" placeholder="Enter XB value > 0.3" required />
-        <input type="number" id="compareInputAC" step="0.001" placeholder="Enter AC value > 1" required  onkeydown="handleKeyPress(event)"/>
+        <input type="number" id="compareInputAC" step="0.001" placeholder="Enter AC value > 1" required onkeydown="handleKeyPress(event)" />
       </div>
       <button onclick="findNearestValue()">Find XD</button>
 
@@ -27,7 +26,7 @@
       <div id="popupMessage" class="popup">Please enter valid values. XB should be within range, and AC must be greater than 1.</div>
 
       <!-- Results -->
-     
+
       <p id="nearestValueOutput">Nearest Retracement Value:</p>
       <div id="resultsTable"></div>
       <div id="instructions"></div>

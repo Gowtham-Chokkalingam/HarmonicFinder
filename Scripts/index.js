@@ -37,7 +37,6 @@ function highlightActiveNavLink() {
     }
   }
 }
-
 const Retracement = [0.236, 0.382, 0.5, 0.618, 0.707, 0.786, 0.886];
 const ProjectionValue = {
   0.236: 3.0,

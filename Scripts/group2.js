@@ -248,8 +248,24 @@ function findNearestValue() {
     return;
   }
   let finalNearestValue = 0;
+  let rangefinalNearestValue = null;
   if (compareValueXB < 0.7) {
     finalNearestValue = Retracement.reduce((closest, current) => {
+      // Calculate the difference between current value and compareValueAC
+      const difference = current - compareValueAC;
+
+      // If the current difference is positive and smaller than the closest difference, update the closest value
+      if (difference > 0 && (closest === null || difference < closest - compareValueAC)) {
+        return current;
+      }
+      rangefinalNearestValue = finalNearestValue;
+
+      // Otherwise, keep the existing closest value
+      return closest;
+    }, null);
+  } else {
+    finalNearestValue = 0.9;
+    rangefinalNearestValue = Retracement.reduce((closest, current) => {
       // Calculate the difference between current value and compareValueAC
       const difference = current - compareValueAC;
 
@@ -261,10 +277,10 @@ function findNearestValue() {
       // Otherwise, keep the existing closest value
       return closest;
     }, null);
-  } else {
-    finalNearestValue = 0.9;
   }
-  document.getElementById("nearestValueOutput").textContent = `Nearest Retracement Value: ${finalNearestValue}`;
+  document.getElementById("nearestValueOutput").textContent = `Nearest Retracement Value: ${
+    rangefinalNearestValue ? rangefinalNearestValue : finalNearestValue
+  }`;
 
   // Get the XD values for the nearest retracement
   const xdValues = XD[finalNearestValue];
