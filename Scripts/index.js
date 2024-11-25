@@ -105,6 +105,11 @@ function findNearestValue() {
 
   // Find the nearest value in the Retracement array
   const nearestValue = Retracement.reduce((closest, current) => {
+    // Check for an exact match first
+    if (current === compareValue) {
+      return current; // Return the exact match immediately
+    }
+      // Otherwise, calculate the differences
     const diffCurrent = current - compareValue;
     const diffClosest = closest - compareValue;
 
